@@ -1,0 +1,42 @@
+
+// ----------------------------------------------------------
+// Rem output with px fallback
+// Going with plain pixel values for the $size setting
+// ----------------------------------------------------------
+
+@mixin font-size($size: 16) {
+	font-size: $size * 1px;
+	font-size: ($size / 10) * 1rem;
+}
+
+// ----------------------------------------------------------
+// General 
+// ----------------------------------------------------------
+
+@mixin no-bullets() {
+	padding: 0;
+
+	li { list-style: none; }
+	li::before {
+    content: "\200B";
+    display: block;
+    height: 0;
+  } // add zero-width space
+  a { border-bottom: none; }
+}
+
+
+
+// ----------------------------------------------------------
+// Placeholder styles
+// ----------------------------------------------------------
+
+@mixin placeholder-style() {
+    @include font-size(16); 
+    font-style: italic; 
+    color: var(--col-border);
+}
+
+
+
+

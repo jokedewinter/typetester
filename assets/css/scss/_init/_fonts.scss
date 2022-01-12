@@ -1,0 +1,94 @@
+/*-------------------------------------------------------- 
+ * Fonts
+ * -------------------------------------------------------- */
+
+@font-face {
+  font-family: 'Kip';
+  font-style: normal;
+  font-weight: 300;
+  src: local(''),
+       url('../fonts/Kip-Light.woff2') format('woff2'), 
+       url('../fonts/Kip-Light.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'Kip';
+  font-style: italic;
+  font-weight: 300;
+  src: local(''),
+       url('../fonts/Kip-LightItalic.woff2') format('woff2'), 
+       url('../fonts/Kip-LightItalic.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'Kip';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/Kip-Regular.woff2') format('woff2'), 
+       url('../fonts/Kip-Regular.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'Kip';
+  font-style: italic;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/Kip-RegularItalic.woff2') format('woff2'), 
+       url('../fonts/Kip-RegularItalic.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'Kip';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+       url('../fonts/Kip-Medium.woff2') format('woff2'), 
+       url('../fonts/Kip-Medium.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'Kip';
+  font-style: italic;
+  font-weight: 500;
+  src: local(''),
+       url('../fonts/Kip-MediumItalic.woff2') format('woff2'), 
+       url('../fonts/Kip-MediumItalic.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'Kip';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+       url('../fonts/Kip-Bold.woff2') format('woff2'), 
+       url('../fonts/Kip-Bold.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'Kip';
+  font-style: italic;
+  font-weight: 700;
+  src: local(''),
+       url('../fonts/Kip-BoldItalic.woff2') format('woff2'), 
+       url('../fonts/Kip-BoldItalic.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'Kip';
+  font-style: normal;
+  font-weight: 900;
+  src: local(''),
+       url('../fonts/Kip-Black.woff2') format('woff2'), 
+       url('../fonts/Kip-Black.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'Kip';
+  font-style: italic;
+  font-weight: 900;
+  src: local(''),
+       url('../fonts/Kip-BlackItalic.woff2') format('woff2'), 
+       url('../fonts/Kip-BlackItalic.woff') format('woff'); 
+}
+

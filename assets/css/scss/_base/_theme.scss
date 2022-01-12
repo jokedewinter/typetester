@@ -1,0 +1,44 @@
+/**
+ * ------------------------------------------------------------- 
+ * Change background colour
+ * ------------------------------------------------------------- */
+
+.dark-mode { background-color: var(--col-page-dark); }
+
+
+.dark-mode,
+.dark-mode button { color: var(--col-text-reverse); }
+
+
+.dark-mode select {
+    color: var(--col-text-reverse);
+    background-image: url("data:image/svg+xml;utf8,<svg fill='c5c7ce' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+}
+
+.dark-mode svg { fill: var(--col-text-reverse); }
+
+
+/**
+ * ------------------------------------------------------------- 
+ * Theme button
+ * ------------------------------------------------------------- */
+ 
+
+#reverseTheme::before {
+    content: "A";
+    width: 24px;
+    height: 24px;
+    @include font-size(16);
+    font-weight: bold;
+    padding: 0.3em 0.5em;
+    border: 1px solid var(--col-border);
+    background-color: var(--col-text);
+    color: var(--col-text-reverse);
+    border-color: var(--col-text);
+}
+
+.dark-mode #reverseTheme::before {
+    background-color: var(--col-text-reverse);
+    color: var(--col-text);
+}
+

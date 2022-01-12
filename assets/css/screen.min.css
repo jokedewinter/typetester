@@ -1,0 +1,453 @@
+/*
+CSS Styles for Type Tester
+
+Author: Joke De Winter Ltd
+Author URI: https://www.jokedewinter.co.uk
+Version: 1.0
+*/
+/*-------------------------------------------------------- 
+ * Fonts
+ * -------------------------------------------------------- */
+@font-face {
+  font-family: 'Kip';
+  font-style: normal;
+  font-weight: 300;
+  src: local(""), url("../fonts/Kip-Light.woff2") format("woff2"), url("../fonts/Kip-Light.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Kip';
+  font-style: italic;
+  font-weight: 300;
+  src: local(""), url("../fonts/Kip-LightItalic.woff2") format("woff2"), url("../fonts/Kip-LightItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Kip';
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/Kip-Regular.woff2") format("woff2"), url("../fonts/Kip-Regular.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Kip';
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/Kip-RegularItalic.woff2") format("woff2"), url("../fonts/Kip-RegularItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Kip';
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/Kip-Medium.woff2") format("woff2"), url("../fonts/Kip-Medium.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Kip';
+  font-style: italic;
+  font-weight: 500;
+  src: local(""), url("../fonts/Kip-MediumItalic.woff2") format("woff2"), url("../fonts/Kip-MediumItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Kip';
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/Kip-Bold.woff2") format("woff2"), url("../fonts/Kip-Bold.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Kip';
+  font-style: italic;
+  font-weight: 700;
+  src: local(""), url("../fonts/Kip-BoldItalic.woff2") format("woff2"), url("../fonts/Kip-BoldItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Kip';
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/Kip-Black.woff2") format("woff2"), url("../fonts/Kip-Black.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Kip';
+  font-style: italic;
+  font-weight: 900;
+  src: local(""), url("../fonts/Kip-BlackItalic.woff2") format("woff2"), url("../fonts/Kip-BlackItalic.woff") format("woff"); }
+
+/* -------------------------------------------------------- 
+ * Custom properties
+ * -------------------------------------------------------- */
+:root {
+  --base: 50px;
+  --between: calc(var(--base) * 1.5);
+  --font: sans-serif;
+  --specimen: 'Kip', serif;
+  --col-text: #232E38;
+  --col-text-light: #8c8e9d;
+  --col-text-reverse: #f7f7f7;
+  --col-page: #fff;
+  --col-page-light: #f9f6f4;
+  --col-page-dark: #232e38;
+  --col-border: #c5c7ce; }
+
+@media screen and (min-width: 48em) {
+  :root {
+    --between: calc(var(--base) * 2); } }
+
+/**
+ * -------------------------------------------------------------
+ * Reset
+ * CSS Reset for minimalists
+ * Source: http://allthingssmitty.com/2017/01/09/css-reset-for-minimalists/
+ * ------------------------------------------------------------------------ */
+*,
+*:before,
+*:after {
+  box-sizing: border-box; }
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: 100%; }
+
+article, aside, footer, header, hgroup, main, nav, section {
+  display: block; }
+
+nav ul, nav ol {
+  padding: 0; }
+  nav ul li, nav ol li {
+    list-style: none; }
+  nav ul li::before, nav ol li::before {
+    content: "\200B";
+    display: block;
+    height: 0; }
+  nav ul a, nav ol a {
+    border-bottom: none; }
+
+button, fieldset, input, label, select, textarea {
+  font-family: var(--font);
+  font-size: 16px;
+  font-size: 1.6rem; }
+
+button, fieldset, select, textarea {
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none; }
+
+/* Accessibility
+ * ------------------------------------------------------------- */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  position: absolute !important;
+  height: 1px;
+  width: 1px; }
+
+.screen-reader-text:focus {
+  background-color: var(--col-page-light);
+  border-radius: 3px;
+  clip: auto;
+  color: var(--col-text);
+  display: block;
+  font-size: 0.875em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  height: auto;
+  line-height: normal;
+  padding: 0.7em 2em;
+  position: absolute;
+  left: 0.5em;
+  top: 0.5em;
+  text-decoration: none;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar */
+  border-bottom: none; }
+
+/**
+ * -------------------------------------------------------------
+ * Support a widely-adopted but non-standard selector for text 
+ * selection styles to achieve a better experience. 
+ * See https://core.trac.wordpress.org/ticket/25898.
+ * -------------------------------------------------------------
+ */
+::selection {
+  background: var(--col-page-light);
+  color: inherit;
+  text-shadow: none; }
+
+::-moz-selection {
+  background: var(--col-page-light);
+  color: inherit;
+  text-shadow: none; }
+
+/* -------------------------------------------------------------
+ * Site settings
+ * ------------------------------------------------------------- */
+/**
+ * -------------------------------------------------------------
+ * Site settings
+ * ------------------------------------------------------------- */
+html {
+  font-size: 62.5%; }
+
+body {
+  clear: both;
+  font-family: var(--font);
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-weight: normal;
+  line-height: 1.5;
+  background-color: var(--col-page);
+  color: var(--col-text); }
+
+main {
+  position: relative;
+  background-color: var(--col-page);
+  padding-bottom: var(--between); }
+
+main > * {
+  position: relative;
+  width: 80%;
+  max-width: 75em;
+  /* 1200px */
+  margin: 0 auto;
+  overflow-x: hidden; }
+
+/*
+ * Layout
+ * ------------------------------------------------------------- */
+.try__options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1em;
+  row-gap: 3em;
+  padding: var(--between) 0; }
+
+.try__nuclear {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4em; }
+
+.try__nuclear > * {
+  margin-left: 2em; }
+
+/**
+ * ------------------------------------------------------------- 
+ * Change background colour
+ * ------------------------------------------------------------- */
+.dark-mode {
+  background-color: var(--col-page-dark); }
+
+.dark-mode,
+.dark-mode button {
+  color: var(--col-text-reverse); }
+
+.dark-mode select {
+  color: var(--col-text-reverse);
+  background-image: url("data:image/svg+xml;utf8,<svg fill='c5c7ce' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>"); }
+
+.dark-mode svg {
+  fill: var(--col-text-reverse); }
+
+/**
+ * ------------------------------------------------------------- 
+ * Theme button
+ * ------------------------------------------------------------- */
+#reverseTheme::before {
+  content: "A";
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 0.3em 0.5em;
+  border: 1px solid var(--col-border);
+  background-color: var(--col-text);
+  color: var(--col-text-reverse);
+  border-color: var(--col-text); }
+
+.dark-mode #reverseTheme::before {
+  background-color: var(--col-text-reverse);
+  color: var(--col-text); }
+
+/* -------------------------------------------------------------
+ * Components
+ * ------------------------------------------------------------- */
+/**
+ * ------------------------------------------------------------- 
+ * Typography
+ * ------------------------------------------------------------- */
+* {
+  -webkit-hyphens: none;
+  -moz-hyphens: none !important;
+  hyphens: none; }
+
+h3 {
+  font-size: 16px;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: space-between; }
+
+p {
+  font-size: 18px;
+  padding-bottom: calc(var(--base) / 4); }
+
+.try__text p {
+  font-family: 'Kip';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 72px;
+  font-size: 7.2rem;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-align: left; }
+
+/* Input range styles from http://danielstern.ca/range.css/#/
+ * ------------------------------------------------------------- */
+input[type=range] {
+  width: 100%;
+  margin: 4.5px 0;
+  background-color: transparent;
+  -webkit-appearance: none; }
+
+input[type=range]:focus {
+  outline: none; }
+
+input[type=range]::-webkit-slider-runnable-track {
+  background: var(--col-text);
+  border: 0px solid var(--col-text);
+  border: 0;
+  width: 100%;
+  height: 1px;
+  cursor: pointer; }
+
+input[type=range]::-moz-range-track {
+  background: var(--col-text);
+  border: 0px solid var(--col-text);
+  border: 0;
+  width: 100%;
+  height: 1px;
+  cursor: pointer; }
+
+input[type=range]::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  border-width: 4.5px 0;
+  color: transparent;
+  width: 100%;
+  height: 1px;
+  cursor: pointer; }
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: var(--col-text-light); }
+
+input[type=range]::-webkit-slider-thumb {
+  margin-top: -4.5px;
+  width: 10px;
+  height: 10px;
+  background: var(--col-text);
+  border: 0px solid var(--col-text);
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-appearance: none; }
+
+input[type=range]::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background: var(--col-text);
+  border: 0px solid var(--col-text);
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer; }
+
+input[type=range]::-ms-thumb {
+  width: 10px;
+  height: 10px;
+  background: var(--col-text);
+  border: 0px solid var(--col-text);
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 0px;
+  /*Needed to keep the Edge thumb centred*/ }
+
+input[type=range]::-ms-fill-lower {
+  background: var(--col-text);
+  border: 0px solid var(--col-text);
+  border: 0; }
+
+input[type=range]:focus::-ms-fill-lower {
+  background: var(--col-text); }
+
+input[type=range]::-ms-fill-upper {
+  background: var(--col-text);
+  border: 0px solid var(--col-text);
+  border: 0; }
+
+input[type=range]:focus::-ms-fill-upper {
+  background: var(--col-text-light); }
+
+/*TODO: Use one of the selectors from https://stackoverflow.com/a/20541859/7077589 and figure out
+how to remove the vertical space around the range input in IE*/
+@supports (-ms-ime-align: auto) {
+  /* Pre-Chromium Edge only styles, selector taken from hhttps://stackoverflow.com/a/32202953/7077589 */
+  input[type=range] {
+    margin: 0;
+    /*Edge starts the margin from the thumb, not the track as other browsers do*/ } }
+
+/*Form elements
+ * ------------------------------------------------------------- */
+button {
+  cursor: pointer; }
+
+select {
+  background: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='232E38' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 5px;
+  border: 1px solid var(--col-border);
+  border-radius: 3px;
+  padding: 0.5em 2em 0.5em 0.5em; }
+
+.selectStyle {
+  padding: 0;
+  display: flex; }
+  .selectStyle li {
+    list-style: none; }
+  .selectStyle li::before {
+    content: "\200B";
+    display: block;
+    height: 0; }
+  .selectStyle a {
+    border-bottom: none; }
+
+.selectStyle li {
+  padding-right: 2em; }
+
+.alignment {
+  border: none;
+  margin-right: 1em;
+  padding: 0; }
+
+svg {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  vertical-align: bottom;
+  fill: var(--col-text); }
+
+#try__reset {
+  background-color: var(--col-border);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  font-size: 1.4rem;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  color: var(--col-text-reverse); }
+
+#try__reset:hover {
+  background-color: var(--col-text-light); }
+
+/*# sourceMappingURL=screen.min.css.map */

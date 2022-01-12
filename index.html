@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testing Type</title>
+    <link rel="stylesheet" href="assets/css/screen.min.css" />
+</head>
+
+<body>
+
+<main id="try">
+
+    <div class="try__options">
+        <section>
+            <h3>Weight</h3>
+            <select id="selectWeight" onchange="chooseWeight()">
+                <option value="300">Light</option>
+                <option value="400" selected>Regular</option>
+                <option value="500">Medium</option>
+                <option value="700">Bold</option>
+                <option value="900">Black</option>
+            </select>
+        </section>
+    
+        <section>
+            <h3>Style</h3>
+            <ul class="selectStyle">
+                <li>
+                    <input type="radio" id="roman" name="selectStyle" oninput="changeStyle()" value="normal" checked>
+                    <label for="roman">Roman</label>
+                </li>
+                <li>
+                    <input type="radio" id="italic" name="selectStyle" oninput="changeStyle()" value="italic">
+                    <label for="italic">Italic</label>
+                </li>
+            </ul>
+        </section>
+        
+        <section id="selectAlignment">
+            <h3>Alignment</h3>
+            <button class="alignment" name="left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M 3 7 L 3 9 L 29 9 L 29 7 Z M 3 11 L 3 13 L 21 13 L 21 11 Z M 3 15 L 3 17 L 29 17 L 29 15 Z M 3 19 L 3 21 L 21 21 L 21 19 Z M 3 23 L 3 25 L 29 25 L 29 23 Z"/></svg><span class="screen-reader-text">Left</span></button>
+            <button class="alignment" name="center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M 3 7 L 3 9 L 29 9 L 29 7 Z M 7 11 L 7 13 L 25 13 L 25 11 Z M 3 15 L 3 17 L 29 17 L 29 15 Z M 7 19 L 7 21 L 25 21 L 25 19 Z M 3 23 L 3 25 L 29 25 L 29 23 Z"/></svg><span class="screen-reader-text">Center</span></button>
+            <button class="alignment" name="right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M 3 7 L 3 9 L 29 9 L 29 7 Z M 11 11 L 11 13 L 29 13 L 29 11 Z M 3 15 L 3 17 L 29 17 L 29 15 Z M 11 19 L 11 21 L 29 21 L 29 19 Z M 3 23 L 3 25 L 29 25 L 29 23 Z"/></svg><span class="screen-reader-text">Right</span></button>
+        </section>
+        
+        <section>
+            <h3>Size <span id="sizeValue">72px</span></h3>
+            <input type="range" class="" min="16" max="144" value="72" id="selectSize" oninput="changeSize()"> 
+        </section>
+                
+        <section>
+            <h3>Line Height <span id="leadingValue">1.2</span></h3>
+            <input type="range" class="" min="10" max="20" value="12" id="selectLeading" oninput="changeLeading()">
+        </section>
+        
+        <section>
+            <h3>Letter Spacing <span id="trackingValue">0 px</span></h3>
+            <input type="range" class="" min="-2" max="10" value="0" step="1" id="selectTracking" oninput="changeTracking()">
+        </section>
+
+
+    </div><!-- .try__options -->
+    
+    
+    <section class="try__text">
+        <p id="tryString" contenteditable="true">You can't judge a book by it's cover, so why judge a typeface without trying it out first?</p>
+    </section>
+    
+    
+    <section class="try__nuclear">
+<!--        <div id="selectTheme">
+            <button name="light"><span class="screen-reader-text">Dark on light</span></button>
+            <button name="dark"><span class="screen-reader-text">Light on dark</span></button>
+        </div>-->
+        <button id="reverseTheme"><span class="screen-reader-text">Reverse colours</span></button>
+        <button id="try__reset">Reset</button>
+    </section>
+    
+    
+</main>
+
+<script src="assets/js/jdw-typetester.min.js"></script>
+
+
+<!-- ********************************************************** -->
+<!--
+This still needs some work
+    
+<section>
+    <h3>Variable Font</h3>
+    <input type="range" class="" min="300" max="900" value="400" id="selectVariable" oninput="changeVariable()"><span id="variableValue">400</span>
+</section>
+<script>
+function changeVariable() {
+  	var chosenVariable = document.getElementById("selectVariable").value;
+	document.getElementById("teststring").style.fontWeight = chosenVariable;
+	document.getElementById("variableValue").innerHTML = chosenVariable;
+}
+</script>
+-->
+
+</body>
+</html>

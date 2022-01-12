@@ -1,0 +1,30 @@
+/* -------------------------------------------------------- 
+ * Custom properties
+ * -------------------------------------------------------- */
+
+:root {
+
+    --base: 50px;
+    --between: calc(var(--base) * 1.5);
+
+	--font: sans-serif;
+	--specimen: 'Kip', serif;
+
+    --col-text: #232E38;			// dark blue
+	--col-text-light: #8c8e9d;	// very light grey
+	--col-text-reverse: #f7f7f7;
+    
+	--col-page: #fff;
+    --col-page-light: #f9f6f4;  // white
+    --col-page-dark: #232e38;  // dark grey
+    --col-border: #c5c7ce;    
+}
+
+
+@media screen and ( min-width: 48em ) {
+    
+    :root {
+        --between: calc(var(--base) * 2);
+    }
+    
+}

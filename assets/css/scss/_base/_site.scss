@@ -1,0 +1,32 @@
+/**
+ * -------------------------------------------------------------
+ * Site settings
+ * ------------------------------------------------------------- */
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	clear: both;
+	font-family: var(--font);
+	@include font-size(18);
+	font-weight: normal;
+	line-height: 1.5;
+    background-color: var(--col-page);
+	color: var(--col-text);
+}
+
+main {
+    position: relative;
+    background-color: var(--col-page);
+	padding-bottom: var(--between);
+}
+
+main > * {
+    position: relative;    
+    width: 80%;
+	max-width: 75em; /* 1200px */
+	margin: 0 auto;
+    overflow-x: hidden;
+}

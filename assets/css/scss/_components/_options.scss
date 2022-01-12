@@ -1,0 +1,53 @@
+/*Form elements
+ * ------------------------------------------------------------- */
+
+button { cursor: pointer; }
+
+select {
+    background: transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='232E38' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 5px;
+    border: 1px solid var(--col-border);
+    border-radius: 3px;
+    padding: 0.5em 2em 0.5em 0.5em;
+}
+
+.selectStyle {
+    @include no-bullets();
+    display: flex;
+}
+
+.selectStyle li { padding-right: 2em; }
+
+
+
+.alignment {
+    border: none;
+    margin-right: 1em;
+    padding: 0;
+}
+
+svg {
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+	vertical-align: bottom;
+    fill: var(--col-text);
+}
+
+
+#try__reset {
+    background-color: var(--col-border);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    @include font-size(14);
+    padding: 0.5em 1em;
+    font-weight: bold;
+    color: var(--col-text-reverse);
+}
+
+#try__reset:hover {
+    background-color: var(--col-text-light);
+}
