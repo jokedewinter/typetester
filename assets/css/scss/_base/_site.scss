@@ -23,10 +23,27 @@ main {
 	padding-bottom: var(--between);
 }
 
-main > * {
+main > *,
+footer > * {
     position: relative;    
     width: 80%;
 	max-width: 75em; /* 1200px */
 	margin: 0 auto;
     overflow-x: hidden;
+}
+
+
+.jokedewinter {    
+    display: flex;
+    justify-content: flex-end;
+    padding: var(--base) 0;
+    
+	a {
+		width: 75px;
+		height: 30px;
+		text-indent: -999em;
+		display: block;
+		background: url('../svg/jokedewinter.svg');
+		border-bottom: none;
+	}
 }
