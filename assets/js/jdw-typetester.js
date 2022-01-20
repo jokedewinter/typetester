@@ -126,4 +126,8 @@ reset_btn.onclick = function() {
 	document.getElementById("trackingValue").innerHTML = tracking + "px";
 
     element.style.textAlign = alignment;
+    
+    var container = document.getElementById("try");
+    container.setAttribute("class", "");
+    
 }
